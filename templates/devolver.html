@@ -8,15 +8,25 @@
 <body>
     <div class="container">
         <h1>Devolução de Livros</h1>
+        
+        {% if mensagem %}
+            <div class="mensagem">{{ mensagem }}</div>
+        {% endif %}
+        
         <form method="post">
-            <label>ID do Livro:</label>
-            <input type="text" name="livro_id" required>
+            <label for="livro_id">Título do Livro:</label>
+            <select name="livro_id" id="livro_id" required>
+                <option value="">Selecione um livro</option>
+                {% for livro in livros %}
+                    <option value="{{ loop.index0 }}">{{ livro.titulo }}</option>  <!-- Usando o índice para o ID -->
+                {% endfor %}
+            </select>
             <div class="button-wrapper">
                 <input type="submit" value="Devolver">
             </div>
         </form>
+
         <a class="button" href="{{ url_for('index') }}">Voltar para a página inicial</a>
     </div>
 </body>
 </html>
-

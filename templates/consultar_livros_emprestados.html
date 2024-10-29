@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Livros Emprestados</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Livros Emprestados</h1>
+
+    {% if livros %}
+        <ul>
+            {% for livro in livros %}
+                <li>
+                    <strong>Título:</strong> {{ livro.titulo }}<br>
+                    <strong>Autor:</strong> {{ livro.autor }}<br>
+                    <strong>ISBN:</strong> {{ livro.isbn }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não há livros emprestados no momento.</p>
+    {% endif %}
+    
+    <a href="{{ url_for('index') }}">Voltar para a página inicial</a>
+</body>
+</html>
