@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Livros</title>
+</head>
+<body>
+    <h1>Consulta de Livros</h1>
+    <form method="get">
+        <input type="text" name="busca" placeholder="Título ou Autor">
+        <input type="submit" value="Buscar">
+    </form>
+    <ul>
+        {% for livro in livros %}
+            <li>{{ livro.titulo }} - {{ livro.autor }} {% if livro.emprestado %}(Emprestado){% endif %}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">

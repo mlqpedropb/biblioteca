@@ -1,0 +1,62 @@
+/* Estilos Globais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef2f3;
+    color: #333;
+}
+
+/* Container Principal */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+/* Grupo de Botões */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+/* Estilo dos Botões */
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    color: white;
+    background-color: #3498db; /* Azul */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600; /* Negrito */
+    transition: background-color 0.3s, transform 0.2s; /* Transições para efeito suave */
+}
+
+/* Efeito de Hover nos Botões */
+.button:hover {
+    background-color: #2980b9; /* Azul mais escuro */
+    transform: translateY(-2px); /* Eleva o botão ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .button {
+        font-size: 1em; /* Tamanho de fonte reduzido em telas pequenas */
+        padding: 10px 15px; /* Menos padding em telas pequenas */
+    }
+}
